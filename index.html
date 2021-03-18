@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="./styles.css" />
   <script>
     let actions = {
-      google: "https://www.google.com/",
+      google: "https://www.google.com/search",
       duckDuckGo: "https://www.duckduckgo.com/",
       bing: "https://www.bing.com/search/",
       ask: "https://www.ask.com/web/",
@@ -43,29 +43,31 @@
 </head>
 
 <body>
+  
   <section id="form">
     <div id="form-inputs">
     <form id="searchForm">
+      <h1>Search by selecting an engine:</h1>
       <input id="textBox" type="text" name="q" />
       <div id="radio-btns">
-      <label id="google"
+      <label class="label" id="google"
         >Google
-        <input type="radio" name="engine" value="google" />
+        <input id="radio-btn" type="radio" name="engine" value="google" />
       </label>
-      <label id="duckDuckGo"
-        >DuckDuckGo <input type="radio" name="engine" value="duckDuckGo" />
+      <label class="label" id="duckDuckGo"
+        >DuckDuckGo <input id="radio-btn" type="radio" name="engine" value="duckDuckGo" />
       </label>
-      <label id="bing"
+      <label class="label" id="bing"
         >Bing
-        <input type="radio" name="engine" value="bing" />
+        <input id="radio-btn" type="radio" name="engine" value="bing" />
       </label>
-      <label id="ask"
+      <label class="label" id="ask"
         >Ask
-        <input type="radio" name="engine" value="ask" />
+        <input id="radio-btn" type="radio" name="engine" value="ask" />
       </label>
     </div>
   </div>
-      <button id="submitBtn" value="Go!">Submit</button>
+      <button id="submitBtn" value="Go!">Search</button>
     
  
     </form>
