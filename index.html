@@ -10,12 +10,18 @@
       ask: "https://www.ask.com/web/",
     };
     function getValidInput() {
-      const textBoxInput = document.getElementById("textBox");
-      console.log(engineInputValue);
+      let inputStatus = true;
+      const textBoxInput = document.getElementById("textBox").value;
+      const engineInput = document.querySelector("input[name=engine]:checked");
+      if (textBoxInput === "" || engineInput === null) {
+        inputStatus = false;
+      }
+      return inputStatus;
     }
     function setSearchEngine() {
-      const engineInput = document.querySelector("input[name=engine]:checked");
-      const engineInputValue = engineInput.value;
+      const engineInputValue = document.querySelector(
+        "input[name=engine]:checked"
+      ).value;
       const formActionURL = actions[engineInputValue];
       return formActionURL;
     }
@@ -23,7 +29,11 @@
     window.addEventListener("load", function () {
       const form = document.querySelector("form");
       form.addEventListener("submit", function (event) {
-        // getValidInput();
+        if (getValidInput() === false) {
+          alert("You must enter a value and select a search engine");
+          event.preventDefault();
+          return 0;
+        }
         const searchEngine = setSearchEngine();
         form.setAttribute("action", searchEngine);
       });
