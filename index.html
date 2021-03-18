@@ -2,6 +2,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel="stylesheet" href="./styles.css" />
   <script>
     let actions = {
       google: "https://www.google.com/",
@@ -32,33 +33,41 @@
         if (getValidInput() === false) {
           alert("You must enter a value and select a search engine");
           event.preventDefault();
-          return 0;
+        } else {
+          const searchEngine = setSearchEngine();
+          form.setAttribute("action", searchEngine);
         }
-        const searchEngine = setSearchEngine();
-        form.setAttribute("action", searchEngine);
       });
     });
   </script>
 </head>
 
 <body>
-  <form id="searchForm">
-    <input id="textBox" type="text" name="q" />
-    <label id="google"
-      >Google
-      <input type="radio" name="engine" value="google" />
-    </label>
-    <label id="duckDuckGo"
-      >DuckDuckGo <input type="radio" name="engine" value="duckDuckGo" />
-    </label>
-    <label id="bing"
-      >Bing
-      <input type="radio" name="engine" value="bing" />
-    </label>
-    <label id="ask"
-      >Ask
-      <input type="radio" name="engine" value="ask" />
-    </label>
-    <button value="Go!">Submit</button>
-  </form>
+  <section id="form">
+    <div id="form-inputs">
+    <form id="searchForm">
+      <input id="textBox" type="text" name="q" />
+      <div id="radio-btns">
+      <label id="google"
+        >Google
+        <input type="radio" name="engine" value="google" />
+      </label>
+      <label id="duckDuckGo"
+        >DuckDuckGo <input type="radio" name="engine" value="duckDuckGo" />
+      </label>
+      <label id="bing"
+        >Bing
+        <input type="radio" name="engine" value="bing" />
+      </label>
+      <label id="ask"
+        >Ask
+        <input type="radio" name="engine" value="ask" />
+      </label>
+    </div>
+  </div>
+      <button id="submitBtn" value="Go!">Submit</button>
+    
+ 
+    </form>
+  </section>
 </body>

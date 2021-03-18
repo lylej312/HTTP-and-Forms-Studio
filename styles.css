@@ -1,0 +1,39 @@
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+/* #form-inputs {
+} */
+
+#searchForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#submitBtn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 18%;
+  padding: 0.5em 3em;
+  border: 0.16em solid black;
+  margin: 1em 1em 1em 1em;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  background-color: grey;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.15s;
+}
